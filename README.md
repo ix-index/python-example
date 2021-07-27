@@ -35,10 +35,26 @@ data = response.json()
 print(data['value'])
 ```
 
+## Fetching Data with 15 seconds interval
+The IX Index series updates their data every 15 seconds. To fetch the data from the API with 15 seconds interval, you can use the code below.
+```
+import time
+
+...
+
+while True:
+	response = requests.request("GET", url, headers=headers)
+	data = response.json()
+	index_value = data['data']['value']
+	print(index_value)
+	time.sleep(15)
+```
+
 ## Complete Example
 
 ```
 import requests
+import time
 
 url = 'https://api.ix-index.com/v1/index/ixci'
 token = '<your api token>'
@@ -46,8 +62,10 @@ headers = {
   'Authorization': 'Bearer '+token
 }
 
-response = requests.request("GET", url, headers=headers)
-data = response.json()
-index_value = data['data']['value']
-print(index_value)
+while True:
+	response = requests.request("GET", url, headers=headers)
+	data = response.json()
+	index_value = data['data']['value']
+	print(index_value)
+	time.sleep(15)
 ```
