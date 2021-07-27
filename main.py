@@ -1,0 +1,16 @@
+import requests
+import time
+
+#url = 'https://api.ix-index.com/v1/index/ixci'
+url = 'http://127.0.0.1:8000/v1/index/ixci'
+token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiYWM3NzY2ZmY0YjFhZmIwZTRiZWU3ZDRkNTAzYjU2MDlhZDRjYmU1MDBjM2Y2NjFiNjRlODNkNjE4NmE2M2U3NTc5YjIxOGEwYjdlMGVhYTgiLCJpYXQiOjE2MjczNTYzMTguNTY3ODUsIm5iZiI6MTYyNzM1NjMxOC41Njc4NTMsImV4cCI6MTY1ODg5MjMxOC40NzYxMDIsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.KXmi0bShtRWbt3tMZU6Qst7bUa01TtzbOvJF3txqfHJjtEPMhUjREWbCl1YGPAcJFKrF1K54qKjj-AJe4DbbxOoHp8c4prcslpdZ1atCj16ePPNkO-DjCrgpqREgBggVongWksfrXevs9cDkBj6a6XKKL1BfJXBTUd7oHWkApwaKrROO7RMdzcBxvulm_V8egb_aJ2Yqy51dTgYEQJ8NcH59lgcg_zwW6DQ0NYVrDnwmDrRIbLsB2p2-JCot3lsv6poFnUxwsni6CEAtxxJ32NWWpYIHNQu7_px6dlG7I5NCiQSLvpaDrQtLRswverYBpNZu5bp0IZYUmcxndBGPx2ViHZ0siLwnkjDe_HBjcOyBjZAK5GDy4VJ56gqA12_XHVbnsumc-QayqpPo7GnHJ7a9kOZxlaU1a4f4-6Kdg66sh8W_sbBSpjMwKwXw6NcvM7xD9wiPl4SKXDbuWRCeNChUf9L4kV2vpfjatLAtTs_XuPLPmF4zRRsfNQhsJyIY9sPM9-6GODEnYK4qLi_kHR-2pHsenw45lfEEIFOJCdhnMaaGZ4-rElvl5t8J4f8O-f2lKNn537TJZonY26kKpk0C-DmuW8yA43W6ebogW1hs6svVy_AyumF1yXXJrvnGXJKeld7-W6hJh-N_4BKUJiXX1Lmc55PVr4VK4Dgozc8'
+headers = {
+  'Authorization': 'Bearer '+token
+}
+
+while True:
+	response = requests.request("GET", url, headers=headers)
+	data = response.json()
+	index_value = data['data']['value']
+	print(index_value)
+	time.sleep(15)
