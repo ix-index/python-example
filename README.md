@@ -32,7 +32,7 @@ response = requests.request("GET", url, headers=headers)
 All the results from the API are in JSON format. So we have to decode it.
 ```
 data = response.json()
-print(data['value'])
+print(data['data']['value'])
 ```
 
 ## Fetching Data with 15 seconds interval
