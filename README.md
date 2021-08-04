@@ -47,7 +47,8 @@ while True:
 	data = response.json()
 	index_value = data['data']['value']
 	print(index_value)
-	time.sleep(15)
+	timestamp = int(time.time())
+	time.sleep((15 - timestamp % 15))
 ```
 
 ## Complete Example
@@ -67,5 +68,6 @@ while True:
 	data = response.json()
 	index_value = data['data']['value']
 	print(index_value)
-	time.sleep(15)
+	timestamp = int(time.time())
+	time.sleep((15 - timestamp % 15))
 ```
