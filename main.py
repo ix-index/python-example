@@ -1,7 +1,7 @@
 import requests
 import time
 
-url = 'https://api.ix-index.com/v1/index/ixci'
+url = 'https://api.ix-index.com/v1/real-time/ixci'
 token = '<your api token>';
 headers = {
   'Authorization': 'Bearer '+token

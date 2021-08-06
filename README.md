@@ -19,7 +19,7 @@ import requests
 To authenticate, we have to add our API token into the header, so the server knows who we are.
 
 ```
-url = 'https://api.ix-index.com/v1/index/ixci'
+url = 'https://api.ix-index.com/v1/real-time/ixci'
 token = '<your api token>'
 headers = {
   'Authorization': 'Bearer '+token
@@ -57,7 +57,7 @@ while True:
 import requests
 import time
 
-url = 'https://api.ix-index.com/v1/index/ixci'
+url = 'https://api.ix-index.com/v1/real-time/ixci'
 token = '<your api token>'
 headers = {
   'Authorization': 'Bearer '+token
